@@ -8,7 +8,7 @@ inputs:
     description: 'A comma-delimited list of AWS account IDs that are associated with the ECR registries. If you do not specify a registry, the default ECR registry is assumed.'
     required: false
 outputs:
-  user:
+  username:
    description: User account for registry
   password: 
     description: Password for registry 

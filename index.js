@@ -35,7 +35,7 @@ async function run() {
       if (authTokenResponse.authorizationData.length == 1) {
         // output the registry URI if this action is doing a single registry login
         core.setOutput('registry', registryUri);
-        core.setOutput('user', creds[0]);
+        core.setOutput('username', creds[0]);
         core.setOutput('password', creds[1]);
       }
 
