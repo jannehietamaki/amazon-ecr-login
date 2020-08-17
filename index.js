@@ -35,13 +35,13 @@ async function run() {
       if (authTokenResponse.authorizationData.length == 1) {
         // output the registry URI if this action is doing a single registry login
         core.setOutput('registry', registryUri);
+        core.setOutput('user', creds[0]);
+        core.setOutput('password', creds[1]);
       }
 
       // Execute the docker login command
       let doLoginStdout = '';
       let doLoginStderr = '';
-      core.setOutput('user', creds[0]);
-      core.setOutput('password', creds[1]);
       const exitCode = await exec.exec('docker login', ['-u', creds[0], '-p', creds[1], proxyEndpoint], {
         silent: true,
         ignoreReturnCode: true,
